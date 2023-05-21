@@ -1,0 +1,20 @@
+[package]
+name = "status"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "status_bar"
+path = "src/main.rs"
+
+[features]
+default = ["t480"]
+t480 = []
+
+[dependencies]
+chrono = "0.4.22"
+
+[profile.release]
+opt-level = "z"
+strip = true
+lto = true
